@@ -27,11 +27,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		// 로그인기능 일시정지 29~35 까지 주석처리
 		
 		registry.addInterceptor( authInterceptor )
-		      //   .addPathPatterns("/**")   // 모든 페이지 로그인
+		       //  .addPathPatterns("/**")   // 모든 페이지 로그인
 			    .addPathPatterns("/Board/**", "/BoardPaging/**")  // 로그인 대상
                 .excludePathPatterns( "/css/**", "/img/**", "/js/**" );	      
-		
-		
+				
 		WebMvcConfigurer.super.addInterceptors(registry);
 		
 	}

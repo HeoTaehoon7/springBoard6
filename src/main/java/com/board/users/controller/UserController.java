@@ -99,7 +99,7 @@ public class UserController {
 	// response.sendRedirect() - Get 방식 호출
 	// GetMapping 으로 처리 : 로그인페이지로 이동
 	//  postMapping 사용 안됨
-	@GetMapping("/LoginForm")
+	@RequestMapping("/LoginForm")
 	public  String  loginForm(
 		String uri, String menu_id, String nowpage, Model model) { 	
 		model.addAttribute("uri",      uri);	

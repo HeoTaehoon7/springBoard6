@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ 
+  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -87,8 +90,12 @@
 		<tr>
 			<td colspan="4">
 			[<a href="/Board/WriteForm?menu_id=${board.menu_id}">새글 쓰기</a>]&nbsp;&nbsp;
+			
+		  <c:if test="${ board.writer eq login.userid }">	
 			[<a href="/Board/UpdateForm?idx=${board.idx}&menu_id=${board.menu_id}">수정</a>]&nbsp;&nbsp;
 			[<a href="/Board/Delete?idx=${board.idx}&menu_id=${board.menu_id}">삭제</a>]&nbsp;&nbsp;
+		  </c:if>	
+			
 			[<a href="/Board/List?menu_id=${board.menu_id}">목록</a>]&nbsp;&nbsp; 
 			[<a href="/">Home</a>]			
 			</td>
